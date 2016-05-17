@@ -1,0 +1,58 @@
+Generator mapy z pliku oraz dynamicznie poprzez interfejs graficzny ?
+I etap
+wczytywanie z pliku lokacji obiektow na mapie - tu jakies wyjatki
+zapis do pliku lokacji obiektow na mapie - -||-
+Hierarchia obiektow
+Map
+Block->Ground implements Walkable ->Grass
+Block->Ground implements Walkable ->Dirt
+Entity->Mob->Zombie implements Attackable
+Block->SurfaceBlock->Tree implements Solid
+Entity->Item->Sword implements Pickable
+Entity->Item->MedKit implements Pickable
+Entity->Mob->Player
+Stworzyc Klase Window, gdzie tworzymy okno i dodajemy przyciski i pola, gdzie mozna dodac dane bloki, moby,
+przedmioty.
+Otwierac 2 okna 1 dla interfejsu graficznego, 2 dla wygenerowanej mapy
+II etap
+Wprowadzic prosty system "kolizji", Dodac mozliwosc poruszania sie prostego AI respektujac kolizje
+Wprowadzić wątek, który pozwoli poruszać się Mobom i wchodzic w interakcje z innymi Mobami
+Do moba dodac punkty zdrowia getHealth, setHealth
+Zaimplementowac zdarzenia typu mob zabil moba, player znalazl przedmiot, player zginal, player utracil punkty
+zdrowia
+
+=============================================
+
+PROJEKT Z PROGRAMOWANIA OBIEKTOWEGO - WYMAGANIA
+
+- projekt należy napisać w 2 językach (2 osobne programy) obiektowych,
+  jednym z nich musi być język Java lub C++
+
+- należy wykorzystać min. 7 klas, w tym min. 5 ułożonych w sensowną i
+  sensownie wykorzystaną hierarchię,
+
+- należy wykorzystać techniki polimorficzne (metody wirtualne),
+
+- należy wykorzystać dowolnego typu kolekcję (tablica, stos, zbiór,
+  mapa, kolejka, lista) do przechowywania obiektów należących do
+  różnych klas,
+
+- należy wykorzystać co najmniej jedn z poniższych elementów:
+  -- szablon (C++),
+  -- interfejs (Java),
+  -- dziedziczenie z klasy abstrakcyjnej (C++,Java),
+  -- domieszki (Ruby - mixin),
+
+- w co najmniejm jednym z języków należy użyć wyjątków,
+
+- należy zastosować techniki hermetyzacji (ukrycie tych elementów,
+  dla których nie ma uzasadnienia, by były upublicznione)
+
+- program musi liczyć min. 400 linii kodu (200 w Rubym)
+
+- kod źródłowy powinien być poprawne rozmieszczony w plikach,
+
+- należy wykorzystać (w dowolnym sensownym celu) zapis danych do pliku
+  i odczyt danych z pliku,
+
+- program musi działać poprawnie.
