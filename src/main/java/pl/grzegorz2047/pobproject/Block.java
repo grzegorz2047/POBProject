@@ -6,9 +6,16 @@ package pl.grzegorz2047.pobproject;
 public class Block {
     private Location location;
     private RGB color;
+    private Material blockType;
 
-    public Block(Location loc, RGB color) {
+    public Block(Location loc, Material blockType, RGB color) {
         this.color = color;
         this.location = loc.clone();
+        this.blockType = blockType;
+    }
+
+    @Override
+    public String toString() {
+        return location.toString() + color.toString() + blockType.name();
     }
 }

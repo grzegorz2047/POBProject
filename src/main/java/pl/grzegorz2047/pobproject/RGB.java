@@ -42,4 +42,9 @@ public class RGB {
     public void setR(int r) {
         this.r = r;
     }
+
+    @Override
+    public String toString() {
+        return r + ":" + g + ":" + b;
+    }
 }

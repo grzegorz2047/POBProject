@@ -1,6 +1,7 @@
 package pl.grzegorz2047.pobproject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -11,7 +12,7 @@ public class Map {
     private int length;
     private int width;
     private List<Mob> mobs = new ArrayList<Mob>();
-    private List<Block> blocks = new ArrayList<Block>();
+    private HashMap<String, Block> blocks = new HashMap<String, Block>();
 
     public String getMapname() {
         return mapname;
@@ -41,7 +42,9 @@ public class Map {
         return mobs;
     }
 
-    public List<Block> getBlocks() {
+    public HashMap<String, Block> getBlocks() {
         return blocks;
     }
+
+
 }

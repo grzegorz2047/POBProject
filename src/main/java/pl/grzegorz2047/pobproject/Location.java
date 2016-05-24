@@ -32,4 +32,10 @@ public class Location {
     public Location clone() {
         return new Location(x, y);
     }
+
+
+    @Override
+    public String toString() {
+        return x + ":" + y;
+    }
 }
