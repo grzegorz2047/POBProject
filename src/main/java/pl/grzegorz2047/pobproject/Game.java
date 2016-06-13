@@ -81,23 +81,28 @@ public class Game extends Thread {
     }
 
     public void load() {
-        System.out.println("Witaj w symulatorze swiata postapokaliptycznego");
+        System.out.println("Witaj w prostym symulatorze swiata postapokaliptycznego.");
 
         boolean saveExists = new File("savedHash.sav").exists();
-        System.out.println("Czy chcesz rozpoczac nowa gre? Jezeli tak nacisnij klawisz N i enter");
-        System.out.println("W przeciwnym razie nacisnij dowolny inny klawisz");
+        System.out.println("Czy chcesz rozpoczac nowa symulacje? Jezeli tak nacisnij klawisz N i enter");
+        System.out.println("W przeciwnym razie nacisnij dowolny inny klawisz i enter");
         Scanner keyboard = new Scanner(System.in);
         String myint = keyboard.next();
-        boolean answer = myint.startsWith("n");
+        boolean answer = myint.startsWith("n") || myint.startsWith("N");
         if (!saveExists || answer) {
             if (saveExists) {
                 FileManagement.removeSaves();
             }
-            System.out.print("Uruchamiam nowa gre!");
+            System.out.println("Uruchamiam nowa gre!");
         } else {
-            System.out.print("Wczytuje gre!");
-            loadGame();
-            return;
+            try {
+                System.out.println("Wczytuje gre!");
+                loadGame();
+                return;
+            } catch (Exception ex) {
+                System.out.println("Nie udalo sie wczytac gry! Rozpoczynam nowa gre!");
+            }
+
         }
         for (String eventType : event.getEventTypes()) {
             hash.put(eventType, new ArrayList<GameEntity>());
@@ -131,7 +136,7 @@ public class Game extends Thread {
         FileManagement.saveObject(turn, "savedTurn.sav");
     }
 
-    private void loadGame() {
+    private void loadGame() throws Exception {
         hash = (HashMap<String, ArrayList<GameEntity>>) FileManagement.loadObject("savedHash.sav");
         players = (ArrayList<Player>) FileManagement.loadObject("savedPlayers.sav");
         turn = (Integer) FileManagement.loadObject("savedTurn.sav");

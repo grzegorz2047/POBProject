@@ -19,11 +19,6 @@ public class GameEntity implements Serializable {
         this.interactive = interactive;
     }
 
-    public GameEntity(Destroyable destroyable, Interactive interactive, String entityType) {
-        this.destroyable = destroyable;
-        this.interactive = interactive;
-    }
-
     public Destroyable getDestroyable() {
         return destroyable;
     }

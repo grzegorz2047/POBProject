@@ -83,7 +83,7 @@ public class FileManagement {
         }
     }
 
-    public static Object loadObject(String saveName) {
+    public static Object loadObject(String saveName) throws Exception {
         FileInputStream fis = null;
         ObjectInputStream ois = null;
         try {
