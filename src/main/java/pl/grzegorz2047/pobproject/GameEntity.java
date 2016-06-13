@@ -1,5 +1,8 @@
 package pl.grzegorz2047.pobproject;
 
+import pl.grzegorz2047.pobproject.interfaces.Destroyable;
+import pl.grzegorz2047.pobproject.interfaces.Interactive;
+
 /**
  * Created by s416045 on 2016-06-13.
  */

@@ -13,12 +13,17 @@ import java.util.*;
  */
 public class Main {
 
+    private static Random random = new Random();
 
     public static void main(String[] args) {
         Game game = new Game();
+        game.load();
         game.start();
     }
 
+    public static Random getRandom() {
+        return random;
+    }
 
 
 }

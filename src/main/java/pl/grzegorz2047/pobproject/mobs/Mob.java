@@ -1,4 +1,8 @@
-package pl.grzegorz2047.pobproject;
+package pl.grzegorz2047.pobproject.mobs;
+
+import pl.grzegorz2047.pobproject.interfaces.Attackable;
+import pl.grzegorz2047.pobproject.interfaces.Destroyable;
+import pl.grzegorz2047.pobproject.interfaces.Interactive;
 
 /**
  * Created by s416045 on 2016-06-13.

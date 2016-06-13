@@ -1,4 +1,4 @@
-package pl.grzegorz2047.pobproject;
+package pl.grzegorz2047.pobproject.mobs;
 
 /**
  * Created by s416045 on 2016-06-13.

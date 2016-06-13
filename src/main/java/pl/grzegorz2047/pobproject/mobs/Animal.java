@@ -1,4 +1,4 @@
-package pl.grzegorz2047.pobproject;
+package pl.grzegorz2047.pobproject.mobs;
 
 /**
  * Created by s416045 on 2016-06-13.
@@ -21,9 +21,9 @@ public class Animal extends Mob {
                 player.changeHealth(this.healthIncreaseValue);
             }
             this.destroyed = true;
-            System.out.println(player.getName() + " zabil " + this.name + " i ma teraz  " + player.getHealth() + " punktow zdrowia");
+            System.out.println(player.getName() + " zabil " + this.name + " i ma teraz " + player.getHealth() + " punktow zdrowia");
         }else{
-            System.out.println(player.getName() + " znalazl " + this.name + " ale jest najedzony i ja zostawia");
+            System.out.println(player.getName() + " zobaczyl " + this.name + " ale jest najedzony i zostawia ja w spokoju");
         }
     }
 }
