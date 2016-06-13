@@ -97,7 +97,7 @@ public class Game extends Thread {
             }
         }
         List<String> playerData = FileManagement.loadFileToList("PlayerData.dat");
-        for (String line : data) {
+        for (String line : playerData) {
             String[] splitted = line.split(",");// HashMap key, ClassName, args...
             players.add(new Player(splitted));
         }
