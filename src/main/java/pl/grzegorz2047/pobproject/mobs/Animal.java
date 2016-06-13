@@ -1,9 +1,11 @@
 package pl.grzegorz2047.pobproject.mobs;
 
+import java.io.Serializable;
+
 /**
  * Created by s416045 on 2016-06-13.
  */
-public class Animal extends Mob {
+public class Animal extends Mob implements Serializable{
     private int healthIncreaseValue;
 
     public Animal(String name, int health, int healthIncreaseValue) {

@@ -2,10 +2,12 @@ package pl.grzegorz2047.pobproject.items;
 
 import pl.grzegorz2047.pobproject.mobs.Player;
 
+import java.io.Serializable;
+
 /**
  * Created by s416045 on 2016-06-13.
  */
-public class Weapon extends Item {
+public class Weapon extends Item implements Serializable {
     private int attackPoints;
 
     public Weapon(String name, int attackPoints) {

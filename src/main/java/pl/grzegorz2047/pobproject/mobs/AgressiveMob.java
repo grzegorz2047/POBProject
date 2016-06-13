@@ -1,9 +1,11 @@
 package pl.grzegorz2047.pobproject.mobs;
 
+import java.io.Serializable;
+
 /**
  * Created by s416045 on 2016-06-13.
  */
-public class AgressiveMob extends Mob {
+public class AgressiveMob extends Mob implements Serializable {
     protected int attackPoints;
     protected int maxHealth;
 

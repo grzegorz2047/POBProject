@@ -4,10 +4,12 @@ import pl.grzegorz2047.pobproject.interfaces.Attackable;
 import pl.grzegorz2047.pobproject.interfaces.Destroyable;
 import pl.grzegorz2047.pobproject.interfaces.Interactive;
 
+import java.io.Serializable;
+
 /**
  * Created by s416045 on 2016-06-13.
  */
-public abstract class Mob implements Attackable, Interactive, Destroyable {
+public abstract class Mob implements Attackable, Interactive, Destroyable, Serializable {
     protected int health;
     protected String name;
     protected boolean destroyed;

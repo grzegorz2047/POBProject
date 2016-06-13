@@ -1,9 +1,11 @@
 package pl.grzegorz2047.pobproject.mobs;
 
+import java.io.Serializable;
+
 /**
  * Created by s416045 on 2016-06-13.
  */
-public class Player extends AgressiveMob {
+public class Player extends AgressiveMob implements Serializable {
 
     public Player(String name, int health, int attackPoints) {
         super(name, health, attackPoints);
