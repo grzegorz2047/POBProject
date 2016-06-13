@@ -3,7 +3,7 @@ package pl.grzegorz2047.pobproject;
 /**
  * Created by s416045 on 2016-06-13.
  */
-public abstract class Mob implements Attackable, Interactive {
+public abstract class Mob implements Attackable, Interactive, Destroyable {
     protected int health;
     protected String name;
     protected boolean destroyed;

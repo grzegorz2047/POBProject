@@ -10,6 +10,7 @@ public class AgressiveMob extends Mob {
     public AgressiveMob(String name, int health, int attackPoints) {
         super(name, health);
         this.attackPoints = attackPoints;
+        this.maxHealth = health;
     }
 
     public int getAttackPoints() {
@@ -41,5 +42,9 @@ public class AgressiveMob extends Mob {
             System.out.println("Gracz " + player.getName() + " zabil " + this.name + " w " + playerAttacks + " atak/u/ach");
             System.out.println("Gracz " + player.getName() + " ma teraz " + player.getHealth() + " / " + player.getMaxHealth());
         }
+    }
+
+    public void setToDestroy(boolean value) {
+        this.destroyed = value;
     }
 }

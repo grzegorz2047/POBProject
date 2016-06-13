@@ -22,6 +22,8 @@ public class Animal extends Mob {
             }
             this.destroyed = true;
             System.out.println(player.getName() + " zabil " + this.name + " i ma teraz  " + player.getHealth() + " punktow zdrowia");
+        }else{
+            System.out.println(player.getName() + " znalazl " + this.name + " ale jest najedzony i ja zostawia");
         }
     }
 }
