@@ -12,7 +12,10 @@ public class Weapon extends Item {
         super(name);
         this.attackPoints = attackPoints;
     }
-
+    public Weapon(String[] args) {
+        super(args[2]);
+        this.attackPoints = Integer.parseInt(args[3]);
+    }
     public int getAttackPoints() {
         return this.attackPoints;
     }

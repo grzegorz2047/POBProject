@@ -10,6 +10,10 @@ public class Animal extends Mob {
         super(name, health);
         this.healthIncreaseValue = healthIncreaseValue;
     }
+    public Animal(String[] args) {
+        super(args[2], Integer.parseInt(args[3]));
+        this.healthIncreaseValue = Integer.parseInt(args[4]);
+    }
 
     @Override
     public void interaction(Player player) {

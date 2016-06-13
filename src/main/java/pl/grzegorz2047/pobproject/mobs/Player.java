@@ -9,6 +9,10 @@ public class Player extends AgressiveMob {
         super(name, health, attackPoints);
     }
 
+    public Player(String[] args) {
+        super(args[0], Integer.valueOf(args[1]), Integer.parseInt(args[2]));
+    }
+
     @Override
     public void interaction(Player player) {
 

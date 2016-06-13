@@ -8,10 +8,16 @@ import pl.grzegorz2047.pobproject.interfaces.Interactive;
  */
 public class GameEntity {
 
+
     private Destroyable destroyable;
     private Interactive interactive;
 
     public GameEntity(Destroyable destroyable, Interactive interactive) {
+        this.destroyable = destroyable;
+        this.interactive = interactive;
+    }
+
+    public GameEntity(Destroyable destroyable, Interactive interactive, String entityType) {
         this.destroyable = destroyable;
         this.interactive = interactive;
     }
@@ -23,4 +29,5 @@ public class GameEntity {
     public Interactive getInteractive() {
         return interactive;
     }
+
 }

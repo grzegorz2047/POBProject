@@ -3,8 +3,11 @@ package pl.grzegorz2047.pobproject;
 import pl.grzegorz2047.pobproject.mobs.Animal;
 import pl.grzegorz2047.pobproject.mobs.Player;
 
+import java.io.File;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by s416045 on 2016-06-13.
@@ -37,7 +40,7 @@ public class Game extends Thread {
 
                 boolean toDestroy = entity.getDestroyable().toDestroy();
                 if (toDestroy) {
-                    hash.get("Animals").remove(entity);
+                    hash.get(eventType).remove(entity);
                     //                hash.get(eventType).delete_at(randomNumber);
                 }
             }
@@ -78,30 +81,28 @@ public class Game extends Thread {
     }
 
     public void load() {
-                    /*
-        BufferedReader br = null;
-        try {
-            br = new BufferedReader(new FileReader("mobs.yml"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        Yaml yaml = new Yaml();
-        @SuppressWarnings("unchecked")
-        HashMap<String, ArrayList> config = (HashMap<String, ArrayList>) yaml.load(br);
-
-        @SuppressWarnings("unchecked")
-        ArrayList<String> mobsStrings = (ArrayList<String>) config.get("mobs");
-
-        Thread thread = new Thread(new Task());
-        thread.start();*/
-
-        // while (scanner.)
-        players.add(new Player("Grzegorz", 15, 2));
-        Animal sheep = new Animal("Sheep", 10, 2);
-        for(String eventType : event.getEventTypes()){
+        for (String eventType : event.getEventTypes()) {
             hash.put(eventType, new ArrayList<GameEntity>());
         }
-        hash.get("Animals").add(new GameEntity(sheep, sheep));//zeby nie traktowalo jako mob, tylko jako dana instancja klasy.. chyba
+        List<String> data = FileManagement.loadFileToList("data.dat");
+        for (String line : data) {
+            String[] splitted = line.split(",");// HashMap key, ClassName, args...
+            try {
+                GameEntity entity = Parser.parse(splitted);
+                //System.out.print("Dodaje do hash key "+splitted[0]);
+                hash.get(splitted[0]).add(entity);
+            } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InstantiationException | ClassNotFoundException e) {
+                //System.out.print("Linia " + line + " nie zostala wczytana  z powodu " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
+        List<String> playerData = FileManagement.loadFileToList("PlayerData.dat");
+        for (String line : data) {
+            String[] splitted = line.split(",");// HashMap key, ClassName, args...
+            players.add(new Player(splitted));
+        }
+
+        //hash.get("Animals").add(new GameEntity(sheep, sheep));//zeby nie traktowalo jako mob, tylko jako dana instancja klasy.. chyba
     }
 
 }

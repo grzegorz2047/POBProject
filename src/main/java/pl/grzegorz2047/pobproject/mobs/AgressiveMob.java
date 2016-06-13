@@ -13,6 +13,12 @@ public class AgressiveMob extends Mob {
         this.maxHealth = health;
     }
 
+    public AgressiveMob(String[] args) {
+        super(args[2], Integer.parseInt(args[3]));
+        this.attackPoints = Integer.parseInt(args[4]);
+        this.maxHealth = Integer.parseInt(args[3]);
+    }
+
     public int getAttackPoints() {
         return this.attackPoints;
     }
